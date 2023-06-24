@@ -13,6 +13,8 @@ const initialState = {
   related: [],
   errorMessage: null,
   message: null,
+  selected_movie:{},
+  modal_Is_Open:false
 };
 
 const movieReducer = (state = initialState, action) => {
@@ -66,6 +68,26 @@ const movieReducer = (state = initialState, action) => {
           page:temp2-1,
         
         };
+
+        case MoviesActionTypes.SELECTED_MOVIE:
+        
+          return {
+            ...state,
+            selected_movie:action.payload,
+            modal_Is_Open:true
+            
+          
+          };
+        case MoviesActionTypes.UNSELECT_MOVIE:
+        
+          return {
+            ...state,
+            selected_movie:{},
+            modal_Is_Open:false
+            
+          
+          };
+        
 
     default:
       return state;

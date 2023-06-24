@@ -13,6 +13,14 @@ export const incrementPage = () => ({
 export const decrementPage = () => ({
   type: MoviesActionTypes.DECREMENT_PAGE,
 });
+export const selected_movie = (movie) => ({
+  type: MoviesActionTypes.SELECTED_MOVIE,
+  payload:movie
+});
+export const unselectMovie = () => ({
+  type: MoviesActionTypes.UNSELECT_MOVIE,
+
+});
 
 export const fetchMoviesSuccess = (movies) => ({
   type: MoviesActionTypes.FETCH_MOVIES_SUCCESS,
